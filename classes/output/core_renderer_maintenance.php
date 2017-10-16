@@ -18,19 +18,19 @@
 /**
  * Overriden core maintenance renderer.
  *
- * @package    theme_boostc
+ * @package    theme_boost_training
  * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-namespace theme_boostc\output;
+namespace theme_boost_training\output;
 defined('MOODLE_INTERNAL') || die();
 
 
 /**
  * The maintenance renderer.
  *
- * @package    theme_boostc
+ * @package    theme_boost_training
  * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */

@@ -17,7 +17,7 @@
 /**
  * Theme functions.
  *
- * @package    theme_boostc
+ * @package    theme_boost_training
  * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -30,7 +30,7 @@ defined('MOODLE_INTERNAL') || die();
  * @param string $tree The CSS tree.
  * @param theme_config $theme The theme config object.
  */
-function theme_boostc_css_tree_post_processor($tree, $theme) {
+function theme_boost_training_css_tree_post_processor($tree, $theme) {
     $prefixer = new theme_boost\autoprefixer($tree);
     $prefixer->prefix();
 }
@@ -41,7 +41,7 @@ function theme_boostc_css_tree_post_processor($tree, $theme) {
  * @param theme_config $theme The theme config object.
  * @return string
  */
-function theme_boostc_get_extra_scss($theme) {
+function theme_boost_training_get_extra_scss($theme) {
     return !empty($theme->settings->scss) ? $theme->settings->scss : '';
 }
 
@@ -51,10 +51,10 @@ function theme_boostc_get_extra_scss($theme) {
  * @param theme_config $theme The theme config object.
  * @return string
  */
-function theme_boostc_get_main_scss_content($theme) {
+function theme_boost_training_get_main_scss_content($theme) {
     global $CFG;
 
-    $scss = file_get_contents("{$CFG->dirroot}/theme/boostc/scss/boostc.scss");
+    $scss = file_get_contents("{$CFG->dirroot}/theme/boost_training/scss/boost_training.scss");
 
     $scss = str_replace ( "'background-color'", $theme->settings->headercolor, $scss );
     $scss = str_replace ( "'text-color'", $theme->settings->textcolor, $scss );
@@ -68,7 +68,7 @@ function theme_boostc_get_main_scss_content($theme) {
  * @param theme_config $theme The theme config object.
  * @return array
  */
-function theme_boostc_get_pre_scss($theme) {
+function theme_boost_training_get_pre_scss($theme) {
     $scss = '';
     $configurable = [
         // Config key => [variableName, ...].
@@ -94,9 +94,9 @@ function theme_boostc_get_pre_scss($theme) {
     return $scss;
 }
 
-function theme_boostc_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+function theme_boost_training_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     if ( $context->contextlevel == CONTEXT_SYSTEM ) {
-        $theme = theme_config::load('boostc');
+        $theme = theme_config::load('boost_training');
         return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
     }
 

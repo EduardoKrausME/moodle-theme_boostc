@@ -14,14 +14,14 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
-namespace theme_boostc\output;
+namespace theme_boost_training\output;
 
 defined('MOODLE_INTERNAL') || die;
 
 /**
  * Renderers to align Moodle's HTML with that expected by Bootstrap
  *
- * @package    theme_boostc
+ * @package    theme_boost_training
  * @copyright  2012 Bas Brands, www.basbrands.nl
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
@@ -38,7 +38,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
      * @return bool
      */
     public function should_display_navbar_logo1() {
-        if (get_config('theme_boostc', 'logo1')) {
+        if (get_config('theme_boost_training', 'logo1')) {
             return true;
         }
 
@@ -60,7 +60,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
      * @return bool
      */
     public function should_display_navbar_logo2() {
-        if (get_config('theme_boostc', 'logo2')) {
+        if (get_config('theme_boost_training', 'logo2')) {
             return true;
         }
 
@@ -97,7 +97,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
                  {$picture}
              </div>
              <div class=\"icones-right\">
-                 <span class=\"bem-vindo\">" . get_string('welcome', 'theme_boostc') . "</span><br>
+                 <span class=\"bem-vindo\">" . get_string('welcome', 'theme_boost_training') . "</span><br>
                  <span>{$fullname}</span><br>
                  <a href=\"{$CFG->wwwroot}/user/profile.php?id={$USER->id}\" class=\"icones\"
                     ><i class=\"material-icons\" title=\"" . get_string('profile') . "\">account_box</i></a>

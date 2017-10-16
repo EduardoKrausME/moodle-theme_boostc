@@ -17,17 +17,17 @@
 /**
  * Language file.
  *
- * @package   theme_boostc
+ * @package   theme_boost_training
  * @copyright 2017 Eduardo Kraus
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$string['configtitle'] = 'BoostC';
-$string['pluginname'] = 'BoostC';
+$string['configtitle'] = 'Boost Training';
+$string['pluginname'] = 'Boost Training';
 $string['advancedsettings'] = 'Configurações avançadas';
-$string['choosereadme'] = 'BoostC é um tema moderno e altamente personalizável. Este tema destina-se a ser usado diretamente ou como um tema pai ao criar novos temas utilizando o Bootstrap 4. ';
+$string['choosereadme'] = 'Boost Training é um tema moderno e altamente personalizável. Este tema destina-se a ser usado diretamente ou como um tema pai ao criar novos temas utilizando o Bootstrap 4. ';
 $string['currentinparentheses'] = '(atual)';
 
 $string['welcome'] = 'Bem vindo';
