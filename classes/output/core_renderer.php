@@ -99,14 +99,14 @@ class core_renderer extends \theme_boost\output\core_renderer {
              <div class=\"icones-right\">
                  <span class=\"bem-vindo\">" . get_string('welcome', 'theme_boostc') . "</span><br>
                  <span>{$fullname}</span><br>
-                 
-                 <a href=\"{$CFG->wwwroot}/user/profile.php?id={$USER->id}\" class=\"icones\"><i class=\"material-icons\" title=\"" . get_string('profile') . "\">account_box</i></a>
-                 
-                 <a href=\"{$CFG->wwwroot}/grade/report/overview/\" class=\"icones\"><i class=\"material-icons\" title=\"" . get_string('grades', 'grades') . "\">assignment</i></a>
-                 
-                 <a href=\"{$CFG->wwwroot}/user/preferences.php\" class=\"icones\"><i class=\"material-icons\" title=\"" . get_string('preferences', 'moodle') . "\">settings</i></a>
-                 
-                 <a href=\"{$CFG->wwwroot}/login/logout.php?sesskey=" . sesskey() . "\" class=\"icones\"><i class=\"material-icons\" title=\"" . get_string('logout') . "\">exit_to_app</i></a>
+                 <a href=\"{$CFG->wwwroot}/user/profile.php?id={$USER->id}\" class=\"icones\"
+                    ><i class=\"material-icons\" title=\"" . get_string('profile') . "\">account_box</i></a>
+                 <a href=\"{$CFG->wwwroot}/grade/report/overview/\" class=\"icones\"
+                    ><i class=\"material-icons\" title=\"" . get_string('grades', 'grades') . "\">assignment</i></a>
+                 <a href=\"{$CFG->wwwroot}/user/preferences.php\" class=\"icones\"
+                    ><i class=\"material-icons\" title=\"" . get_string('preferences', 'moodle') . "\">settings</i></a>
+                 <a href=\"{$CFG->wwwroot}/login/logout.php?sesskey=" . sesskey() . "\" class=\"icones\"
+                    ><i class=\"material-icons\" title=\"" . get_string('logout') . "\">exit_to_app</i></a>
              </div>
          </div>";
     }

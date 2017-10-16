@@ -25,7 +25,7 @@ if ($ADMIN->fulltree) {
     $settings = new theme_boost_admin_settingspage_tabs('themesettingboostc', get_string('configtitle', 'theme_boostc'));
     $page = new admin_settingpage('theme_boostc_general', get_string('generalsettings', 'theme_boostc'));
 
-    // logo file setting.
+    // Logo file setting.
     $name        = 'theme_boostc/logo1';
     $title       = get_string ( 'logo1', 'theme_boostc' );
     $description = get_string ( 'logo1desc', 'theme_boostc' );
@@ -51,7 +51,7 @@ if ($ADMIN->fulltree) {
     $page->add($setting);
 
 
-    // @headerColor setting.
+    // Header Color setting.
     $name = 'theme_boostc/headercolor';
     $title = get_string('headercolor', 'theme_boostc');
     $description = get_string('headercolor_desc', 'theme_boostc');
@@ -60,7 +60,7 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
-    // @textColor setting.
+    // Text Color setting.
     $name = 'theme_boostc/textcolor';
     $title = get_string('textcolor', 'theme_boostc');
     $description = get_string('textcolor_desc', 'theme_boostc');
