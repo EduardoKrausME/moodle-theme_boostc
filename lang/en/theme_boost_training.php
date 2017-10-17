@@ -54,3 +54,7 @@ $string['rawscss_desc'] = 'Use this field to provide SCSS or CSS code which will
 $string['rawscsspre'] = 'Raw initial SCSS';
 $string['rawscsspre_desc'] = 'In this field you can provide initialising SCSS code, it will be injected before everything else. Most of the time you will use this setting to define variables.';
 $string['region-side-pre'] = 'Right';
+
+$string['icons'] = 'Icons';
+$string['icon'] = '{$a} URL';
+$string['icondesc'] = 'Enter the URL of your {$a}.';
