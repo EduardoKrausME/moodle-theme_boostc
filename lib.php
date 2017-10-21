@@ -94,6 +94,11 @@ function theme_boost_training_get_pre_scss($theme) {
     return $scss;
 }
 
+/**
+ * Load logos.
+ *
+ * @return string
+ */
 function theme_boost_training_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
     if ( $context->contextlevel == CONTEXT_SYSTEM ) {
         $theme = theme_config::load('boost_training');

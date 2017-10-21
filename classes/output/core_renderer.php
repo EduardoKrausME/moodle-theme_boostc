@@ -14,8 +14,14 @@
 // You should have received a copy of the GNU General Public License
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
+/**
+ * Core renderer.
+ *
+ * @package    theme_boost_magnific
+ * @copyright  2017 Eduardo Kraus
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 namespace theme_boost_training\output;
-
 defined('MOODLE_INTERNAL') || die;
 
 /**
@@ -28,6 +34,8 @@ defined('MOODLE_INTERNAL') || die;
 class core_renderer extends \theme_boost\output\core_renderer {
 
     /**
+     * Renders the custom favicon.
+     *
      * @return string
      */
     public function favicon() {
@@ -35,6 +43,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
     }
 
     /**
+     * Renders the custom logo.
+     *
      * @return bool
      */
     public function should_display_navbar_logo1() {
@@ -46,6 +56,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
     }
 
     /**
+     * Renders the custom logo.
+     *
      * @return string
      */
     public function get_logo_url1() {
@@ -57,6 +69,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
     }
 
     /**
+     * Renders the custom logo.
+     *
      * @return bool
      */
     public function should_display_navbar_logo2() {
@@ -68,6 +82,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
     }
 
     /**
+     * Renders the custom logo
+     *
      * @return string
      */
     public function get_logo_url2() {
@@ -79,6 +95,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
     }
 
     /**
+     * Renders the flat menu
+     *
      * @return bool|string
      */
     public function user_flat_menu() {
@@ -112,6 +130,8 @@ class core_renderer extends \theme_boost\output\core_renderer {
     }
 
     /**
+     * Renders the icons footer
+     *
      * @return string
      */
     public function get_icons_footer() {
