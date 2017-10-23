@@ -17,10 +17,11 @@
 /**
  * Core renderer.
  *
- * @package    theme_boost_magnific
+ * @package    theme_boost_training
  * @copyright  2017 Eduardo Kraus
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
+
 namespace theme_boost_training\output;
 defined('MOODLE_INTERNAL') || die;
 
@@ -155,5 +156,76 @@ class core_renderer extends \theme_boost\output\core_renderer {
         }
 
         return "<div class=\"icones\">$returnicones</div>";
+    }
+
+    /**
+     * Renders the custom topo banner.
+     *
+     * @return string
+     */
+    public function get_topo_banner() {
+        global $CFG;
+
+        $imageurl = $this->page->theme->setting_file_url('topo_banner', 'topo_banner');
+        if (!empty($imageurl)) {
+            return $imageurl;
+        }
+
+        $itemid = theme_get_revision();
+        return \moodle_url::make_file_url("$CFG->wwwroot/theme/image.php", "/boost_training/theme_boost_training/{$itemid}/topo_banner");
+    }
+
+    /**
+     * Renders the custom blocks.
+     *
+     * @return string
+     */
+    public function get_home_blocks() {
+        
+        $numblocks = 4;
+        $rowclass = 'col-lg-3';
+
+        if (empty($this->page->theme->settings->blocktitle_4)) {
+            $numblocks = 3;
+            $rowclass = 'col-lg-4';
+        }
+        if (empty($this->page->theme->settings->blocktitle_3)) {
+            $numblocks = 2;
+            $rowclass = 'col-lg-6';
+        }
+        if (empty($this->page->theme->settings->blocktitle_2) || empty($this->page->theme->settings->blocktitle_1)) {
+            return "";
+        }
+        
+        $return_block = '';
+        for($i=1; $i<=$numblocks; $i++){
+            $blockcolor = $this->page->theme->settings->{"blockcolor_{$i}"};
+            $blockicon = $this->page->theme->setting_file_url("blockicon_{$i}", "blockicon_{$i}");
+            $blocktitle = $this->page->theme->settings->{"blocktitle_{$i}"};
+            $blocktext = $this->page->theme->settings->{"blocktext_{$i}"};
+            $blocklink = $this->page->theme->settings->{"blocklink_{$i}"};
+
+            $return_block .="
+                    <div class=\"row-col {$rowclass} col-sm-6\">
+                        <div class=\"teaser\" style=\"background-color: {$blockcolor};\">
+                            <div class=\"teaser_icon size_small\">
+                                <img src=\"{$blockicon}\">
+                            </div>
+                            <h3 class=\"numbered\">
+                                <a href=\"{$blocklink}\">{$blocktitle}</a>
+                            </h3>
+                            <p>{$blocktext}</p>
+                        </div>
+                    </div>";
+        }
+        
+        return "<section id=\"about\">
+            <div class=\"container\">
+                <div class=\"row\">
+                    {$return_block}
+                </div>
+            </div>
+        </section>";
+
     }
 }

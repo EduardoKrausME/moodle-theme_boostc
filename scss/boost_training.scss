@@ -23,7 +23,7 @@ $body-bg: #f0f3f5 !default;
 $body-color: #3a3a3a !default;
 
 // Typography
-$font-family-sans-serif: "Open Sans", "Helvetica Neue", Arial, sans-serif !default;
+$font-family-sans-serif: Roboto, Arial, sans-serif !default;
 $font-size-root: 14px !default;
 
 // Tables
@@ -74,11 +74,23 @@ $breadcrumb-divider-rtl: "/" !default;
 @import "moodle";
 
 body {
+    #page-header,
+    #page-footer {
+        position: relative;
+        &::after,
+        &::before {
+            content: "";
+            display: inline-block;
+            background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAo0lEQVR4AYSQxQHCQBBF8Ts9cMKJu7bA9EQJFIfVwBEb1uKyP1l/o4ODGWJpfBQrQs1JUbHjx8EMznsjBMWOFhvPm5fhNwFQtePnwYhOFBjUlYGqnaBihlfFCJLsDQDGZBmRMczgD/VIwZ0WHAqIjppojjR05nG1Ws0yTw3RYmiOmccMbBWtuiiGwj2i7Sl5HUjg6Ci2Iylc6udQCv8HjhkiAQB0pjjl754e5gAAAABJRU5ErkJggg==) repeat 0 0;
+            position: absolute;
+            z-index: 2;
+            height: 11px;
+            width: 11px;
+        }
+    }
     #page-header {
         padding: 7px 0 0 0;
         margin: $navbar-height 0 -35px 69px;
-        //color: 'text-color';
-        //background: 'background-color';
         .card {
             background: transparent;
             border: none;
@@ -106,7 +118,7 @@ body {
             font-size: 40px;
             padding: 0;
             line-height: 1.2em;
-            font-family: Roboto, Arial, sans-serif;
+            font-family: $font-family-sans-serif;
         }
         .dropdown,
         .dropdown .icon,
@@ -114,9 +126,80 @@ body {
         .dropdown .dropdown-toggle::after {
             color: #30373f;
         }
-        .pull-xs-left,
-        .page-header-headings {
-            float: none;
+        .page-header-image {
+            display: none;
+        }
+        &::before {
+            left: -1px;
+            top: -1px;
+            transform: rotate(0deg);
+        }
+        &::after {
+            right: -1px;
+            top: -1px;
+            transform: rotate(90deg);
+        }
+        &.has-banner {
+            margin-bottom: 0;
+            #banner {
+                margin-top: -7px;
+                img {
+                    width: 100%;
+                }
+            }
+            #about {
+                margin-top: -90px;
+                margin-bottom: 20px;
+                .row {
+                    display: inline-flex;
+                    .row-col {
+                        height: inherit;
+                        display: inline-block;
+                        align-items: stretch;
+                    }
+                }
+                .teaser {
+                    min-height: 215px;
+                    text-align: center;
+                    color: #fff;
+                    border-radius: 3px;
+                    padding: 35px;
+                    height: 100%;
+                    * {
+                        color: #fff;
+                    }
+                    img {
+                        width: 32px;
+                    }
+                    h3 {
+                        font-size: 24px;
+                        margin-bottom: 30px;
+                        margin-top: 30px;
+                    }
+                    p {
+                        margin-bottom: 15px;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #page-footer {
+        .helplink,
+        [href*="download.moodle.org/mobile"] {
+            display: none;
+        }
+        &::before {
+            left: -1px;
+            top: -10px;
+            transform: rotate(-90deg);
+        }
+        &::after {
+            top: -10px;
+            right: 9px;
+            transform: rotate(180deg);
         }
     }
     #page,
@@ -233,7 +316,7 @@ body {
         }
     }
     .list-group-item {
-        font-family: Roboto, Arial, sans-serif;
+        font-family: $font-family-sans-serif;
         font-size: 16px;
         color: #999;
         background-color: transparent;
@@ -384,7 +467,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
     color: 'background-color';
 }
 .navbar {
-    max-height: 65px;
+    max-height: $navbar-height;
 }
 .navbar-light {
     box-shadow: 0 2px 4px rgba(49, 55, 63, 0.2);
@@ -394,7 +477,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
     background: #31373f;
     padding: 0 1rem 0 0;
     color: #fff;
-    height: 65px;
+    height: $navbar-height;
     a {
         color: #fff;
     }
@@ -487,7 +570,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
     }
     .navbar-brand {
         background-color: transparent;
-        font-family: Roboto;
+        font-family: $font-family-sans-serif;
         font-size: 1.6rem;
         font-weight: 700;
         padding: 16px 3px;
@@ -526,11 +609,11 @@ body.drawer-open-left {
     .navbar-light {
         .navbar-nav {
             .site-name {
-                display: inline;;
+                display: inline;
             }
             .has-logo {
                 .logo {
-                    display: inline;;
+                    display: inline;
                 }
                 .site-name {
                     display: none;
@@ -542,7 +625,7 @@ body.drawer-open-left {
         }
     }
     #page-header {
-        margin: 65px -1px -35px 0;
+        margin: $navbar-height -1px -35px 0;
     }
     #page,
     #page-footer {
@@ -621,7 +704,7 @@ body.drawer-open-left {
         background: 0 0;
         border: 0;
         font-size: 16px;
-        font-family: Roboto, Arial, sans-serif;
+        font-family: $font-family-sans-serif;
         transition: color 0.5s ease;
         color: rgba(0, 0, 0, .54);
         .icon {
@@ -684,7 +767,7 @@ body.drawer-open-left {
     }
 }
 @media (max-width: 600px) {
-    .col-sm-1
+    .col-sm-1,
     .col-sm-2,
     .col-sm-3,
     .col-sm-4,
@@ -709,7 +792,7 @@ body.drawer-open-left {
         .text-sm-right {
             text-align: left;
             font-weight: 700;
-            font-family: Roboto, Arial, sans-serif;
+            font-family: $font-family-sans-serif;
         }
     }
 }
@@ -946,48 +1029,6 @@ body.drawer-open-left {
     font-size: 18px;
     line-height: 0.8;
 }
-#page-header,
-#page-footer {
-    position: relative;
-    &::after,
-    &::before {
-        content: "";
-        display: inline-block;
-        background: transparent url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAo0lEQVR4AYSQxQHCQBBF8Ts9cMKJu7bA9EQJFIfVwBEb1uKyP1l/o4ODGWJpfBQrQs1JUbHjx8EMznsjBMWOFhvPm5fhNwFQtePnwYhOFBjUlYGqnaBihlfFCJLsDQDGZBmRMczgD/VIwZ0WHAqIjppojjR05nG1Ws0yTw3RYmiOmccMbBWtuiiGwj2i7Sl5HUjg6Ci2Iylc6udQCv8HjhkiAQB0pjjl754e5gAAAABJRU5ErkJggg==") repeat 0 0;
-        position: absolute;
-        z-index: 2;
-        height: 11px;
-        width: 11px;
-    }
-}
-#page-header {
-    &::before {
-        left: -1px;
-        top: -1px;
-        transform: rotate(0deg);
-    }
-    &::after {
-        right: -1px;
-        top: -1px;
-        transform: rotate(90deg);
-    }
-}
-#page-footer {
-    .helplink,
-    [href*="download.moodle.org/mobile"] {
-        display: none;
-    }
-    &::before {
-        left: -1px;
-        top: -10px;
-        transform: rotate(-90deg);
-    }
-    &::after {
-        top: -10px;
-        right: 9px;
-        transform: rotate(180deg);
-    }
-}
 .coursebox {
     .content {
         display: flex;
@@ -1015,3 +1056,4 @@ body.drawer-open-left {
 }
 @import "login";
 @import "footer-icon";
+@import "slick";

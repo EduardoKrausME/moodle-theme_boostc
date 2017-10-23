@@ -15,7 +15,7 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * A secure layout for the boost_training theme.
+ * A two column layout for the boost_training theme.
  *
  * @package   theme_boost_training
  * @copyright 2017 Eduardo Kraus
@@ -24,17 +24,35 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+user_preference_allow_ajax_update('drawer-open-nav', PARAM_ALPHA);
+require_once($CFG->libdir . '/behat/lib.php');
+
+if (isloggedin()) {
+    $navdraweropen = (get_user_preferences('drawer-open-nav', 'true') == 'true');
+} else {
+    $navdraweropen = false;
+}
+$extraclasses = [];
+if ($navdraweropen) {
+    $extraclasses[] = 'drawer-open-left';
+}
+$bodyattributes = $OUTPUT->body_attributes($extraclasses);
 $blockshtml = $OUTPUT->blocks('side-pre');
 $hasblocks = strpos($blockshtml, 'data-block=') !== false;
-$bodyattributes = $OUTPUT->body_attributes();
-
+$regionmainsettingsmenu = $OUTPUT->region_main_settings_menu();
 $templatecontext = [
     'sitename' => format_string($SITE->shortname, true, ['context' => context_course::instance(SITEID), "escape" => false]),
     'output' => $OUTPUT,
-    'bodyattributes' => $bodyattributes,
     'sidepreblocks' => $blockshtml,
-    'hasblocks' => $hasblocks
+    'hasblocks' => $hasblocks,
+    'bodyattributes' => $bodyattributes,
+    'navdraweropen' => $navdraweropen,
+    'regionmainsettingsmenu' => $regionmainsettingsmenu,
+    'hasregionmainsettingsmenu' => !empty($regionmainsettingsmenu)
 ];
 
-echo $OUTPUT->render_from_template('theme_boost_training/secure', $templatecontext);
+$PAGE->requires->jquery ();
+
+$templatecontext['flatnavigation'] = $PAGE->flatnav;
+echo $OUTPUT->render_from_template('theme_boost_training/frontpage', $templatecontext);
 

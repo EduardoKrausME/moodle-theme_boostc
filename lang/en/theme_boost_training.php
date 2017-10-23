@@ -58,3 +58,29 @@ $string['region-side-pre'] = 'Right';
 $string['icons'] = 'Icons';
 $string['icon'] = '{$a} URL';
 $string['icondesc'] = 'Enter the URL of your {$a}.';
+
+$string['home'] = 'Home';
+
+$string['topo_banner'] = 'Image of the banner';
+$string['topo_bannerdesc'] = 'Image of the fixed banner at the top of the page';
+
+$string['block1_heading'] = 'Block 1';
+$string['block2_heading'] = 'Block 2';
+$string['block3_heading'] = 'Block 3';
+$string['block4_heading'] = 'Block 3';
+
+$string['blockcolor'] = 'Background color';
+$string['blockcolor_desc'] = 'Background color of the block {$a}';
+
+$string['blockicon'] = 'Icon';
+$string['blockicon_desc'] = '32x32 icon that will be displayed at the top of the block {$a}';
+
+$string['blocktitle'] = 'Title';
+$string['blocktitle_desc'] = 'Block title {$a}';
+
+$string['blocktext'] = 'Block Text';
+$string['blocktext_desc'] = 'Block Text. Do not add too much text because it will overuse the blocks';
+
+$string['blocklink'] = 'Link';
+$string['blocklink_desc'] = 'Block link {$a} to take the student to some page.';
+

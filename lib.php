@@ -66,7 +66,7 @@ function theme_boost_training_get_main_scss_content($theme) {
  * Get SCSS to prepend.
  *
  * @param theme_config $theme The theme config object.
- * @return array
+ * @return string
  */
 function theme_boost_training_get_pre_scss($theme) {
     $scss = '';
@@ -97,13 +97,22 @@ function theme_boost_training_get_pre_scss($theme) {
 /**
  * Load logos.
  *
- * @return string
+ * @param $course
+ * @param $cm
+ * @param $context
+ * @param $filearea
+ * @param $args
+ * @param $forcedownload
+ * @param array $options
+ *
+ * @return bool
  */
-function theme_boost_training_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
+function theme_boost_training_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, $options = array()) {
     if ( $context->contextlevel == CONTEXT_SYSTEM ) {
         $theme = theme_config::load('boost_training');
         return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
     }
 
     send_file_not_found();
+    return false;
 }
