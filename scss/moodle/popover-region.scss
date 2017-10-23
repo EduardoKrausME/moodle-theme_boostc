@@ -15,12 +15,10 @@ $content-header-footer-height: $region-header-height + $region-footer-height;
     opacity: 0;
     visibility: hidden;
 }
-
 @mixin visible() {
     opacity: 1;
     visibility: visible;
 }
-
 .popover-region {
     float: right;
     position: relative;
@@ -42,7 +40,6 @@ $content-header-footer-height: $region-header-height + $region-footer-height;
         }
     }
 }
-
 .popover-region-toggle {
     cursor: pointer;
 
@@ -69,7 +66,6 @@ $content-header-footer-height: $region-header-height + $region-footer-height;
         z-index: $region-container-z-index + 1;
     }
 }
-
 .count-container {
     padding: 2px;
     border-radius: 2px;
@@ -81,7 +77,6 @@ $content-header-footer-height: $region-header-height + $region-footer-height;
     top: 5px;
     right: 0;
 }
-
 .popover-region-container {
     @include visible();
 
@@ -95,7 +90,6 @@ $content-header-footer-height: $region-header-height + $region-footer-height;
     background-color: #fff;
     z-index: $region-container-z-index;
 }
-
 .popover-region-header-container {
     height: $region-header-height;
     line-height: $region-header-height;
@@ -104,7 +98,6 @@ $content-header-footer-height: $region-header-height + $region-footer-height;
     border-bottom: $standard-border;
     box-sizing: border-box;
 }
-
 .popover-region-footer-container {
     height: $region-footer-height;
     text-align: center;
@@ -112,14 +105,12 @@ $content-header-footer-height: $region-header-height + $region-footer-height;
     background-color: $popover-bg;
     padding-top: 3px;
 }
-
 .popover-region-header-text {
     float: left;
     margin: 0;
     font-size: 14px;
     line-height: $region-header-height;
 }
-
 .popover-region-header-actions {
     float: right;
 
@@ -144,7 +135,6 @@ $content-header-footer-height: $region-header-height + $region-footer-height;
         margin-bottom: 0;
     }
 }
-
 .popover-region-content-container {
     height: calc(100% - #{$content-header-footer-height});
     width: 100%;
@@ -174,7 +164,6 @@ $content-header-footer-height: $region-header-height + $region-footer-height;
         }
     }
 }
-
 .navbar {
     .popover-region {
         float: right;
@@ -212,7 +201,6 @@ $content-header-footer-height: $region-header-height + $region-footer-height;
     }
 
 }
-
 .content-item-container {
     width: 100%;
     border-bottom: $standard-border;
@@ -315,7 +303,6 @@ $content-header-footer-height: $region-header-height + $region-footer-height;
         }
     }
 }
-
 .popover-region-notifications {
     .popover-region-header-container {
         .mark-all-read-button {
@@ -370,7 +357,6 @@ $content-header-footer-height: $region-header-height + $region-footer-height;
         }
     }
 }
-
 .popover-region-messages {
     .mark-all-read-button {
         .normal-icon {
@@ -465,7 +451,6 @@ $content-header-footer-height: $region-header-height + $region-footer-height;
         display: none;
     }
 }
-
 @media (max-width: 767px) {
     .navbar {
         .popover-region {
@@ -475,7 +460,6 @@ $content-header-footer-height: $region-header-height + $region-footer-height;
         }
     }
 }
-
 @media (max-width: 480px) {
     .navbar {
         .popover-region {

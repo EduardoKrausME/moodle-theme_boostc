@@ -26,17 +26,14 @@ body.behat-site {
         position: absolute;
     }
 }
-
 .phpinfo table,
 .phpinfo th,
 .phpinfo h2 {
     margin: auto;
 }
-
 .phpinfo h2 {
     width: 600px;
 }
-
 .phpinfo .e,
 .phpinfo .v,
 .phpinfo .h {
@@ -46,12 +43,10 @@ body.behat-site {
     color: #000;
     background-color: #ccc;
 }
-
 .phpinfo .e {
     background-color: #ccf;
     font-weight: bold;
 }
-
 .phpinfo .h {
     background-color: #99c;
     font-weight: bold;

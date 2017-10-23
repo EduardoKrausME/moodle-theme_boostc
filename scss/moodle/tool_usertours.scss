@@ -17,7 +17,6 @@ div[data-flexitour="backdrop"] {
     // The backdrop needs to have a lower z-index than everything else in the tour, but higher than everything else in Moodle.
     z-index: #{$flexitour-base-zindex};
 }
-
 // The step-background is used to highlight the region targetted in the step.
 div[data-flexitour="step-background-fader"],
 div[data-flexitour="step-background"] {
@@ -26,7 +25,6 @@ div[data-flexitour="step-background"] {
     // The step container, and the target background should be at the same z-index.
     z-index: #{$flexitour-base-zindex} + 1;
 }
-
 span[data-flexitour="container"],
 div[data-flexitour="step-background-fader"],
 [data-flexitour="step-backdrop"] > td,
@@ -34,7 +32,6 @@ div[data-flexitour="step-background-fader"],
     // The step container, and the target background should be at the same z-index.
     z-index: #{$flexitour-base-zindex} + 2;
 }
-
 span[data-flexitour="container"] {
     .modal-dialog {
         /**
@@ -61,22 +58,20 @@ span[data-flexitour="container"] {
     }
 
     // We need to know the opposite sides for arrow placement.
-    $opposites:
-        (
+    $opposites: (
             top: bottom,
             bottom: top,
             left: right,
             right: left,
-        );
+    );
 
     // These are the next leading side and allow for placement half-way along the step dialogue.
-    $sides:
-        (
+    $sides: (
             top: left,
             bottom: left,
             left: top,
             right: top,
-        );
+    );
 
     @each $direction in map-keys($opposites) {
         $opposite: map_get($opposites, $direction);
@@ -103,7 +98,6 @@ span[data-flexitour="container"] {
         }
     }
 }
-
 // Hack the bone! Hack the bone!
 [data-region="drawer"] [data-flexitour="container"] {
     /*rtl:ignore*/

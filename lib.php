@@ -56,8 +56,8 @@ function theme_boost_training_get_main_scss_content($theme) {
 
     $scss = file_get_contents("{$CFG->dirroot}/theme/boost_training/scss/boost_training.scss");
 
-    $scss = str_replace ( "'background-color'", $theme->settings->headercolor, $scss );
-    $scss = str_replace ( "'text-color'", $theme->settings->textcolor, $scss );
+    $scss = str_replace("'background-color'", $theme->settings->headercolor, $scss);
+    $scss = str_replace("'text-color'", $theme->settings->textcolor, $scss);
 
     return $scss;
 }
@@ -95,7 +95,7 @@ function theme_boost_training_get_pre_scss($theme) {
 }
 
 /**
- * Load logos.
+ * load theme images.
  *
  * @param $course
  * @param $cm
@@ -103,12 +103,11 @@ function theme_boost_training_get_pre_scss($theme) {
  * @param $filearea
  * @param $args
  * @param $forcedownload
- * @param array $options
- *
+ * @param $options
  * @return bool
  */
-function theme_boost_training_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, $options = array()) {
-    if ( $context->contextlevel == CONTEXT_SYSTEM ) {
+function theme_boost_training_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, $options) {
+    if ($context->contextlevel == CONTEXT_SYSTEM) {
         $theme = theme_config::load('boost_training');
         return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
     }

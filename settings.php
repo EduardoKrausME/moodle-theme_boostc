@@ -92,8 +92,8 @@ if ($ADMIN->fulltree) {
     $page->add($setting);
 
 
-    $listaCores = array(
-        '', '#3aadaa', '#98b446', '#f1b22f', '#fd6420'
+    $listacores = array(
+        '', '#fd6420', '#f1b22f', '#98b446', '#3aadaa',
     );
 
     for ($i = 1; $i <= 4; $i++) {
@@ -105,7 +105,7 @@ if ($ADMIN->fulltree) {
         $name = "theme_boost_training/blockcolor_{$i}";
         $title = get_string('blockcolor', 'theme_boost_training');
         $description = get_string('blockcolor_desc', 'theme_boost_training', $i);
-        $default = $listaCores[$i];
+        $default = $listacores[$i];
         $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
         $setting->set_updatedcallback('theme_reset_all_caches');
         $page->add($setting);

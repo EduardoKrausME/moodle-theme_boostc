@@ -181,7 +181,6 @@ class core_renderer extends \theme_boost\output\core_renderer {
      * @return string
      */
     public function get_home_blocks() {
-        
         $numblocks = 4;
         $rowclass = 'col-lg-3';
 
@@ -196,16 +195,17 @@ class core_renderer extends \theme_boost\output\core_renderer {
         if (empty($this->page->theme->settings->blocktitle_2) || empty($this->page->theme->settings->blocktitle_1)) {
             return "";
         }
-        
-        $return_block = '';
-        for($i=1; $i<=$numblocks; $i++){
+        $returnblocks = '';
+        for ($i = 1; $i <= $numblocks; $i++) {
             $blockcolor = $this->page->theme->settings->{"blockcolor_{$i}"};
             $blockicon = $this->page->theme->setting_file_url("blockicon_{$i}", "blockicon_{$i}");
             $blocktitle = $this->page->theme->settings->{"blocktitle_{$i}"};
             $blocktext = $this->page->theme->settings->{"blocktext_{$i}"};
             $blocklink = $this->page->theme->settings->{"blocklink_{$i}"};
+            if (empty($blocklink))
+                $blocklink = '#';
 
-            $return_block .="
+            $returnblocks .= "
                     <div class=\"row-col {$rowclass} col-sm-6\">
                         <div class=\"teaser\" style=\"background-color: {$blockcolor};\">
                             <div class=\"teaser_icon size_small\">
@@ -218,14 +218,12 @@ class core_renderer extends \theme_boost\output\core_renderer {
                         </div>
                     </div>";
         }
-        
         return "<section id=\"about\">
             <div class=\"container\">
                 <div class=\"row\">
-                    {$return_block}
+                    {$returnblocks}
                 </div>
             </div>
         </section>";
-
     }
 }

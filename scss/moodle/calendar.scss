@@ -10,19 +10,15 @@ $calendarEventUserColor: #dce7ec !default; // Pale blue.
 .calendar_event_course {
     background-color: $calendarEventCourseColor;
 }
-
 .calendar_event_global {
     background-color: $calendarEventGlobalColor;
 }
-
 .calendar_event_group {
     background-color: $calendarEventGroupColor;
 }
-
 .calendar_event_user {
     background-color: $calendarEventUserColor;
 }
-
 // Calendar restyling.
 .path-calendar {
     .calendartable {
@@ -174,14 +170,12 @@ $calendarEventUserColor: #dce7ec !default; // Pale blue.
 
     }
 }
-
 // Calendar export.
 #page-calendar-export {
     .indent {
         padding-left: 20px;
     }
 }
-
 // Block minicalendar.
 .block {
     .minicalendar {
@@ -307,12 +301,10 @@ $calendarEventUserColor: #dce7ec !default; // Pale blue.
         }
     }
 }
-
 /* Display month name above the calendar */
 table.calendartable caption {
     caption-side: top;
 }
-
 .ical-link {
     font-size: 10px;
     font-weight: bold;
@@ -324,7 +316,6 @@ table.calendartable caption {
     border-bottom: 1px solid #013;
     border-right: 1px solid #013;
 }
-
 .ical-link:hover,
 .ical-link:active,
 .ical-link:focus,
@@ -332,7 +323,6 @@ table.calendartable caption {
     color: #fff;
     text-decoration: none;
 }
-
 @media (min-width: 768px) {
     #page-calender-view {
         .container-fluid {

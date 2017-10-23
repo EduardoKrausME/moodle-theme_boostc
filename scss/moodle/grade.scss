@@ -18,19 +18,16 @@
         margin-bottom: 0;
     }
 }
-
 // Grade upgrade notice.
 .core_grades_notices {
     .singlebutton {
         display: inline-block;
     }
 }
-
 .path-grade-report #maincontent + .urlselect {
     position: absolute;
     left: 40vw;
 }
-
 .path-grade-report-grader {
     #region-main {
         min-width: 100%;
@@ -45,7 +42,6 @@
         clear: both;
     }
 }
-
 // Rubrics
 #page-grade-grading-manage {
     #activemethodselector {
@@ -85,13 +81,11 @@
         }
     }
 }
-
 #page-grade-grading-form-rubric-edit {
     .gradingform_rubric_editform .status {
         font-size: 70%;
     }
 }
-
 .gradingform_rubric.editor {
     .addlevel,
     .addcriterion {
@@ -102,7 +96,6 @@
         }
     }
 }
-
 #rubric-rubric {
     &.gradingform_rubric {
         #rubric-criteria {
@@ -233,7 +226,6 @@
         }
     }
 }
-
 // Set up grades layout.
 .path-grade-edit-tree .setup-grades {
     h4 {
@@ -355,7 +347,6 @@
         }
     }
 }
-
 /**
  * Grader report.
  */
@@ -385,7 +376,6 @@
         }
     }
 }
-
 /**
  * User report.
  */
@@ -402,7 +392,6 @@
         }
     }
 }
-
 /**
  * Single view.
  */

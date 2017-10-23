@@ -13,11 +13,9 @@
         border: none;
     }
 }
-
 .hidden {
     display: none;
 }
-
 .messaging-area-container {
     margin-bottom: 30px;
 
@@ -670,7 +668,6 @@
         }
     }
 }
-
 .preferences-container {
     .container-fluid {
         padding: 0;
@@ -792,11 +789,9 @@
         }
     }
 }
-
 .disabled-message {
     display: none;
 }
-
 .disabled {
     .disabled-message {
         display: block;
@@ -806,7 +801,6 @@
         }
     }
 }
-
 .general-settings-container {
     .loading-icon {
         display: none;
@@ -845,7 +839,6 @@
         }
     }
 }
-
 .preferences-page-container {
     .checkbox-container {
         margin: 30px 5px;
@@ -867,7 +860,6 @@
         }
     }
 }
-
 .notification-area {
     height: 600px;
     @media (max-height: 670px) {
@@ -1010,7 +1002,6 @@
         }
     }
 }
-
 @media (max-width: 979px) {
     .messaging-area-container {
         .messaging-area {
@@ -1191,7 +1182,6 @@
         }
     }
 }
-
 @media (max-width: 480px) {
     .messaging-area-container {
         .messaging-area {
