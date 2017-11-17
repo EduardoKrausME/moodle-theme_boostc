@@ -213,9 +213,9 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $blocklink = $this->page->theme->settings->{"blocklink_{$i}"};
             if (empty($blocklink)) {
                 $blocklink = '#';
-                $blocklink_output = '';
+                $blocklinkoutput = '';
             } else {
-                $blocklink_output = "<p><a target=\"_blank\" href=\"{$blocklink}\"><i class=\"material-icons\">open_in_new</i></a></p>";
+                $blocklinkoutput = "<p><a target=\"_blank\" href=\"{$blocklink}\"><i class=\"material-icons\">open_in_new</i></a></p>";
             }
 
             $returnblocks .= "
@@ -228,7 +228,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
                                 <a target=\"_blank\" href=\"{$blocklink}\">{$blocktitle}</a>
                             </h3>
                             <p>{$blocktext}</p>
-                            {$blocklink_output}
+                            {$blocklinkoutput}
                         </div>
                     </div>";
         }
