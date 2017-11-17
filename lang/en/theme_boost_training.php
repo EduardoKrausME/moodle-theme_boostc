@@ -67,7 +67,7 @@ $string['topo_bannerdesc'] = 'Image of the fixed banner at the top of the page';
 $string['block1_heading'] = 'Block 1';
 $string['block2_heading'] = 'Block 2';
 $string['block3_heading'] = 'Block 3';
-$string['block4_heading'] = 'Block 3';
+$string['block4_heading'] = 'Block 4';
 
 $string['blockcolor'] = 'Background color';
 $string['blockcolor_desc'] = 'Background color of the block {$a}';
