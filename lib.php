@@ -97,13 +97,15 @@ function theme_boost_training_get_pre_scss($theme) {
 /**
  * load theme images.
  *
- * @param $course
- * @param $cm
- * @param $context
- * @param $filearea
- * @param $args
- * @param $forcedownload
- * @param $options
+ * @category files
+ * @param stdClass $course course settings object
+ * @param stdClass $cm context object
+ * @param stdClass $context context object
+ * @param string $component the name of the component we are serving files for.
+ * @param string $filearea the name of the file area.
+ * @param array $args the remaining bits of the file path.
+ * @param bool $forcedownload whether the user must be forced to download the file.
+ * @param array $options additional options affecting the file serving
  * @return bool
  */
 function theme_boost_training_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, $options) {
@@ -113,5 +115,4 @@ function theme_boost_training_pluginfile($course, $cm, $context, $filearea, $arg
     }
 
     send_file_not_found();
-    return false;
 }

@@ -40,7 +40,15 @@ class core_renderer extends \theme_boost\output\core_renderer {
      * @return string
      */
     public function favicon() {
-        return $this->page->theme->setting_file_url('favicon', 'favicon');
+        if ($this->page->theme->settings->favicon) {
+            return $this->page->theme->setting_file_url('favicon', 'favicon');
+        }
+
+        if (method_exists($this->page->theme, "image_url")) {
+            return $this->page->theme->image_url('favicon', 'theme');
+        } else {
+            return $this->page->theme->pix_url('favicon', 'theme');
+        }
     }
 
     /**
@@ -49,7 +57,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
      * @return bool
      */
     public function should_display_navbar_logo1() {
-        if (get_config('theme_boost_training', 'logo1')) {
+        if ($this->page->theme->settings->logo1) {
             return true;
         }
 
@@ -75,7 +83,7 @@ class core_renderer extends \theme_boost\output\core_renderer {
      * @return bool
      */
     public function should_display_navbar_logo2() {
-        if (get_config('theme_boost_training', 'logo2')) {
+        if ($this->page->theme->settings->logo2) {
             return true;
         }
 
@@ -164,15 +172,16 @@ class core_renderer extends \theme_boost\output\core_renderer {
      * @return string
      */
     public function get_topo_banner() {
-        global $CFG;
-
         $imageurl = $this->page->theme->setting_file_url('topo_banner', 'topo_banner');
         if (!empty($imageurl)) {
             return $imageurl;
         }
 
-        $itemid = theme_get_revision();
-        return \moodle_url::make_file_url("$CFG->wwwroot/theme/image.php", "/boost_training/theme_boost_training/{$itemid}/topo_banner");
+        if (method_exists($this->page->theme, "image_url")) {
+            return $this->page->theme->image_url('topo_banner', 'theme');
+        } else {
+            return $this->page->theme->pix_url('topo_banner', 'theme');
+        }
     }
 
     /**
@@ -202,8 +211,12 @@ class core_renderer extends \theme_boost\output\core_renderer {
             $blocktitle = $this->page->theme->settings->{"blocktitle_{$i}"};
             $blocktext = $this->page->theme->settings->{"blocktext_{$i}"};
             $blocklink = $this->page->theme->settings->{"blocklink_{$i}"};
-            if (empty($blocklink))
+            if (empty($blocklink)) {
                 $blocklink = '#';
+                $blocklinkP = '';
+            } else {
+                $blocklinkP = "<p><a target=\"_blank\" href=\"{$blocklink}\"><i class=\"material-icons\">open_in_new</i></a></p>";
+            }
 
             $returnblocks .= "
                     <div class=\"row-col {$rowclass} col-sm-6\">
@@ -212,9 +225,10 @@ class core_renderer extends \theme_boost\output\core_renderer {
                                 <img src=\"{$blockicon}\">
                             </div>
                             <h3 class=\"numbered\">
-                                <a href=\"{$blocklink}\">{$blocktitle}</a>
+                                <a target=\"_blank\" href=\"{$blocklink}\">{$blocktitle}</a>
                             </h3>
                             <p>{$blocktext}</p>
+                            {$blocklinkP}
                         </div>
                     </div>";
         }
