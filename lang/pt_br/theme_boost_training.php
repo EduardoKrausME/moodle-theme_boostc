@@ -43,8 +43,20 @@ $string['logo2desc'] = 'Este logotipo aparecerá quando o menu estiver desmorona
 $string['favicon'] = 'Favicon';
 $string['favicondesc'] = 'Alterar o favicon do tema. Uma imagem .png com fundo transparente e altura de 32px terá o melhor funcionamento.';
 
-$string['headercolor'] = 'Cor de fundo';
-$string['headercolor_desc'] = 'Cor do fundo do cabeçalho do tema';
+$string['menucolor'] = 'Cor dos menus';
+$string['menucolor_desc'] = 'Cor de fundo dos menus de Topo e lateral';
+
+$string['menutext'] = 'Cor dos textos do menu';
+$string['menutext_desc'] = 'Cor dos textos dos menus de Topo e lateral';
+
+$string['menutexttitle'] = 'Cor dos títulos textos';
+$string['menutexttitle_desc'] = 'Cor dos textos dos títulos dos menus de Topo e lateral';
+
+$string['menutextselect'] = 'Cor dos textos ao selecionar';
+$string['menutextselect_desc'] = 'Cor dos textos dos menus de Topo e lateral quando estes estiverem selecionados';
+
+$string['headercolor'] = 'Cor de fundo dos Ícones';
+$string['headercolor_desc'] = 'Cor do fundo dos ícones do tema';
 
 $string['textcolor'] = 'Cor do texto';
 $string['textcolor_desc'] = 'Cor do cabeçalho do texto';

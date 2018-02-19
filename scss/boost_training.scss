@@ -9,7 +9,7 @@ $brand-primary: #2f7da8 !default;
 $brand-success: #77b300 !default;
 $brand-warning: #f80 !default;
 $brand-danger: #ff4136 !default;
-$brand-inverse: #31373f !default;
+$brand-inverse: 'menucolor' !default;
 $navbar-height: 65px !default;
 
 // Spacing
@@ -74,20 +74,20 @@ $breadcrumb-divider-rtl: "/" !default;
 @import "moodle";
 
 body {
-    #page-header,
-    #page-footer {
-        position: relative;
-        &::after,
-        &::before {
-            content: "";
-            display: inline-block;
-            background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAo0lEQVR4AYSQxQHCQBBF8Ts9cMKJu7bA9EQJFIfVwBEb1uKyP1l/o4ODGWJpfBQrQs1JUbHjx8EMznsjBMWOFhvPm5fhNwFQtePnwYhOFBjUlYGqnaBihlfFCJLsDQDGZBmRMczgD/VIwZ0WHAqIjppojjR05nG1Ws0yTw3RYmiOmccMbBWtuiiGwj2i7Sl5HUjg6Ci2Iylc6udQCv8HjhkiAQB0pjjl754e5gAAAABJRU5ErkJggg==) repeat 0 0;
-            position: absolute;
-            z-index: 2;
-            height: 11px;
-            width: 11px;
-        }
-    }
+    //#page-header,
+    //#page-footer {
+    //    position: relative;
+    //    &::after,
+    //    &::before {
+    //        content: "";
+    //        display: inline-block;
+    //        background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAYAAACprHcmAAAAo0lEQVR4AYSQxQHCQBBF8Ts9cMKJu7bA9EQJFIfVwBEb1uKyP1l/o4ODGWJpfBQrQs1JUbHjx8EMznsjBMWOFhvPm5fhNwFQtePnwYhOFBjUlYGqnaBihlfFCJLsDQDGZBmRMczgD/VIwZ0WHAqIjppojjR05nG1Ws0yTw3RYmiOmccMbBWtuiiGwj2i7Sl5HUjg6Ci2Iylc6udQCv8HjhkiAQB0pjjl754e5gAAAABJRU5ErkJggg==) repeat 0 0;
+    //        position: absolute;
+    //        z-index: 2;
+    //        height: 11px;
+    //        width: 11px;
+    //    }
+    //}
     #page-header {
         padding: 7px 0 0 0;
         margin: $navbar-height 0 -35px 69px;
@@ -129,16 +129,16 @@ body {
         .page-header-image {
             display: none;
         }
-        &::before {
-            left: -1px;
-            top: -1px;
-            transform: rotate(0deg);
-        }
-        &::after {
-            right: -1px;
-            top: -1px;
-            transform: rotate(90deg);
-        }
+        //&::before {
+        //    left: -1px;
+        //    top: -1px;
+        //    transform: rotate(0deg);
+        //}
+        //&::after {
+        //    right: -1px;
+        //    top: -1px;
+        //    transform: rotate(90deg);
+        //}
         &.has-banner {
             margin-bottom: 0;
             #banner {
@@ -281,7 +281,7 @@ body {
 #nav-drawer {
     padding: 0;
     width: $drawer-width;
-    background: #31373f;
+    background: 'menucolor';
     button[data-action=toggle-drawer] {
         border-color: transparent;
         background: transparent;
@@ -303,7 +303,7 @@ body {
         a,
         i,
         span {
-            color: #e7e7e7;
+            color: 'menutexttitle';
         }
         a:hover {
             color: #dedede;
@@ -323,12 +323,12 @@ body {
     .list-group-item {
         font-family: $font-family-sans-serif;
         font-size: 16px;
-        color: #999;
+        color: 'menutext';
         background-color: transparent;
         border: 1px solid transparent;
         padding: .55rem 1rem;
         i {
-            color: #999;
+            color: 'menutext';
             margin-right: 6px;
         }
         &:first-child,
@@ -336,9 +336,9 @@ body {
             border-radius: 0;
         }
         @include hover-focus {
-            color: rgba(255, 255, 255, 0.8);
+            color: 'menutextselect';
             i {
-                color: rgba(255, 255, 255, 0.8);
+                color: 'menutextselect';
             }
         }
         .media-left {
@@ -353,10 +353,10 @@ body {
         }
         &.font-weight-bold,
         &.font-weight-bold .icon {
-            color: 'background-color';
+            color: 'headercolor';
         }
         &.sidebar-heading div {
-            color: #b7bdc1;
+            color: 'menutexttitle';
             margin-top: 9.375px;
             font-weight: 500;
             font-size: .9rem;
@@ -434,7 +434,7 @@ body {
             height: 52px;
             white-space: nowrap;
             width: max-content;
-            background: #31373f;
+            background: 'menucolor';
             transition: background-color .3s ease;
             overflow: hidden;
             .text-menu-item {
@@ -469,7 +469,7 @@ body.drawer-open-right {
 }
 body[rel^="page-admin-"] .menu-sitesettings {
     font-weight: 700;
-    color: 'background-color';
+    color: 'headercolor';
 }
 .navbar {
     max-height: $navbar-height;
@@ -479,12 +479,12 @@ body[rel^="page-admin-"] .menu-sitesettings {
     -webkit-box-shadow: 0 2px 4px rgba(49, 55, 63, 0.2);
     -moz-box-shadow: 0 2px 4px rgba(49, 55, 63, 0.2);
     -o-box-shadow: 0 2px 4px rgba(49, 55, 63, 0.2);
-    background: #31373f;
+    background: 'menucolor';
     padding: 0 1rem 0 0;
-    color: #fff;
+    color: 'menutext';
     height: $navbar-height;
     a {
-        color: #fff;
+        color: 'menutext';
     }
     .navbar-nav {
         height: 50px;
@@ -498,12 +498,12 @@ body[rel^="page-admin-"] .menu-sitesettings {
             font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #fff;
+            color: 'menutext';
             padding: 22px 15px;
             display: inline-block;
             &:hover {
-                background-color: rgba(0, 0, 0, .1);
-                color: rgba(255, 255, 255, 0.85);
+                // background-color: 'menutextselect';
+                color: 'menutextselect';
             }
         }
         .popover-region {
@@ -532,7 +532,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
         span {
             width: 20px;
             height: 2px;
-            background: #fff;
+            background: 'menutext';
             display: block;
             margin: 4px auto 0;
             transition: all 0.3s cubic-bezier(0.81, -0.33, 0.345, 1.375);
@@ -547,7 +547,7 @@ body[rel^="page-admin-"] .menu-sitesettings {
                 width: 6px;
                 height: 2px;
                 display: block;
-                background: #fff;
+                background: 'menutext';
                 transform: rotate(45deg);
                 position: absolute;
                 top: 2px;
@@ -650,11 +650,11 @@ body.drawer-open-left {
     padding-top: 0;
     .icon {
         font-size: 24px;
-        color: rgba(255, 255, 255, 0.7);
+        color: 'menutext';
         transition: color 0.5s ease;
         float: none;
         @include hover-focus {
-            color: #fff;
+            color: 'menutextselect';
         }
     }
 }
@@ -680,7 +680,7 @@ body.drawer-open-left {
         display: none;
     }
     .dropdown-toggle::after {
-        color: rgba(255, 255, 255, 0.75);
+        color: 'menutext';
     }
 }
 .dropdown-menu,
@@ -1006,8 +1006,8 @@ body.drawer-open-left {
         -ms-user-select: none;
         user-select: none;
         border: 1px solid transparent;
-        background: 'background-color';
-        color: #fff;
+        background: 'headercolor';
+        color: 'textcolor';
         box-sizing: border-box;
         margin: 0;
         font-size: 1em;
@@ -1028,7 +1028,7 @@ body.drawer-open-left {
     }
     .current {
         font-size: 24px;
-        color: 'background-color';
+        color: 'headercolor';
     }
 }
 .calendar_event_group i {

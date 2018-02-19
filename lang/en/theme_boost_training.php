@@ -43,8 +43,20 @@ $string['logo2desc'] = 'This logo will appear when the menu is collapsed. Must b
 $string['favicon'] = 'Favicon';
 $string['favicondesc'] = 'Change the favicon of the theme. A .png image with transparent background and 32px height will work best.';
 
-$string['headercolor'] = 'Background color';
-$string['headercolor_desc'] = 'Theme header background color';
+$string['menucolor'] = 'Menu color';
+$string['menucolor_desc'] = 'Background color of the Top and Side menus';
+
+$string['menutext'] = 'Color of menu texts';
+$string['menutext_desc'] = 'Text color of the Top and Side menus';
+
+$string['menutexttitle'] = 'Text title color';
+$string['menutexttitle_desc'] = 'Text color of the top and side menu titles';
+
+$string['menutextselect'] = 'Text color when selecting';
+$string['menutextselect_desc'] = 'Text color of the Top and Side menus when they are selected';
+
+$string['headercolor'] = 'Icons background color';
+$string['headercolor_desc'] = 'Theme Icons Background Color';
 
 $string['textcolor'] = 'Text color';
 $string['textcolor_desc'] = 'Header text color';

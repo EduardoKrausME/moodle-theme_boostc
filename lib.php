@@ -56,8 +56,12 @@ function theme_boost_training_get_main_scss_content($theme) {
 
     $scss = file_get_contents("{$CFG->dirroot}/theme/boost_training/scss/boost_training.scss");
 
-    $scss = str_replace("'background-color'", $theme->settings->headercolor, $scss);
-    $scss = str_replace("'text-color'", $theme->settings->textcolor, $scss);
+    $scss = str_replace("'headercolor'", $theme->settings->headercolor, $scss);
+    $scss = str_replace("'textcolor'", $theme->settings->textcolor, $scss);
+    $scss = str_replace("'menucolor'", $theme->settings->menucolor, $scss);
+    $scss = str_replace("'menutext'", $theme->settings->menutext, $scss);
+    $scss = str_replace("'menutexttitle'", $theme->settings->menutexttitle, $scss);
+    $scss = str_replace("'menutextselect'", $theme->settings->menutextselect, $scss);
 
     return $scss;
 }

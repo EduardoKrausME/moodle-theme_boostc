@@ -57,6 +57,39 @@ if ($ADMIN->fulltree) {
     $setting->set_updatedcallback('theme_reset_all_caches');
     $page->add($setting);
 
+    // Menu Color setting.
+    $name = 'theme_boost_training/menucolor';
+    $title = get_string('menucolor', 'theme_boost_training');
+    $description = get_string('menucolor_desc', 'theme_boost_training');
+    $default = '#31373f';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    $name = 'theme_boost_training/menutext';
+    $title = get_string('menutext', 'theme_boost_training');
+    $description = get_string('menutext_desc', 'theme_boost_training');
+    $default = '#999999';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    $name = 'theme_boost_training/menutexttitle';
+    $title = get_string('menutexttitle', 'theme_boost_training');
+    $description = get_string('menutexttitle_desc', 'theme_boost_training');
+    $default = '#e7e7e7';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
+    $name = 'theme_boost_training/menutextselect';
+    $title = get_string('menutextselect', 'theme_boost_training');
+    $description = get_string('menutextselect_desc', 'theme_boost_training');
+    $default = '#D1D1D2';
+    $setting = new admin_setting_configcolourpicker($name, $title, $description, $default, null, false);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $page->add($setting);
+
 
     // Header Color setting.
     $name = 'theme_boost_training/headercolor';
